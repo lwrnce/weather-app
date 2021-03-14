@@ -22,7 +22,6 @@
                     <input type="text" class="form-control" id="city-input" placeholder="Enter a city name!">
                     <button class="btn" id="search-button"><i class="fa fa-search"></i> Search</button>
                     <!--List of Searched Cities-->
-                    <button class="btn clear-searches" id="clear-button">Clear Searches</button>
                     <ul class="cities-list">
 
                     </ul>
@@ -32,10 +31,10 @@
                 <div class="row">
                     <div class="current-weather">
                         <h4 class="current-city-name" id="current-city"></h4>
-                            <p>Temperature:<span class="today" id="temperature"></span></p>
-                            <p>Humidity:<span class="today" id="humidity"></span></p>
-                            <p>Wind Speed:<span class="today" id="wind-speed"></span></p>
-                            <p>UV Index:<span class="today" id="uv-index"></span></p>
+                            <p>Temperature: <span class="today" id="temperature"></span></p>
+                            <p>Humidity: <span class="today" id="humidity"></span></p>
+                            <p>Wind Speed: <span class="today" id="wind-speed"></span></p>
+                            <p>UV Index: <span class="today" id="uv-index"></span></p>
                     </div>
                 </div>
                 <div class="row">
@@ -43,35 +42,35 @@
                         <h5>Weather for the Next Five Days</h5>
                         <div class="row">
                             <!--Future dates and images matching weather inserted via javascript-->
-                            <div class="col-2">
+                            <div class="col-2 forecast">
                                 <p id="date1"></p>
                                 <p id="weather-img1"></p>
-                                <p>Temperature:<span class="day1-temp"></span></p>
-                                <p>Humidity:<span class="day1-humidity"></span></p>
+                                <p>Temperature:<span id="temp-index0"></span></p>
+                                <p>Humidity:<span id="humidity-index0"></span></p>
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 forecast">
                                 <p id="date2"></p>
                                 <p id="weather-img2"></p>
-                                <p>Temperature:<span class="day2-temp"></span></p>
-                                <p>Humidity:<span class="day2-humidity"></span></p>
+                                <p>Temperature:<span id="temp-index1"></span></p>
+                                <p>Humidity:<span id="humidity-index1"></span></p>
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 forecast">
                                 <p id="date3"></p>
                                 <p id="weather-img3"></p>
-                                <p>Temperature:<span class="day3-temp"></span></p>
-                                <p>Humidity:<span class="day3-humidity"></span></p>
+                                <p>Temperature:<span id="temp-index2"></span></p>
+                                <p>Humidity:<span id="humidity-index2"></span></p>
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 forecast">
                                 <p id="date4"></p>
                                 <p id="weather-img4"></p>
-                                <p>Temperature:<span class="day4-temp"></span></p>
-                                <p>Humidity:<span class="day4-humidity"></span></p>
+                                <p>Temperature:<span id="temp-index3"></span></p>
+                                <p>Humidity:<span id="humidity-index3"></span></p>
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 forecast">
                                 <p id="date5"></p>
                                 <p id="weather-img5"></p>
-                                <p>Temperature:<span class="day5-temp"></span></p>
-                                <p>Humidity:<span class="day5-humidity"></span></p>
+                                <p>Temperature:<span id="temp-index4"></span></p>
+                                <p>Humidity:<span id="humidity-index4"></span></p>
                             </div>
                         </div>
                     </div>

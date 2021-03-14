@@ -15,8 +15,8 @@ let APIKey="a0aca8a89948154a4182dcecc780b513";
 
 function displayWeather(e) {
     e.preventDefault();
-    if(search.val().trim()!=='') {
-        city=search.val().trim();
+    if(search.val()!=='') {
+        city=search.val();
         currentWeather(city);
     }
 };
@@ -39,7 +39,7 @@ function currentWeather(city) {
         let ws = r.wind.speed;
         let windMPH = (ws * 2.237).toFixed(1);
         $(currentWind).html(windMPH + "MPH");
-        currentUVindex(r.coord.lon, r.coord.lat);
+        UVindex(r.coord.lon, r.coord.lat);
         forecast(r.id);
         if(r.cod == 200) {
             searchedCity = JSON.parse(localStorage.getItem("city-name"));
@@ -49,29 +49,36 @@ function currentWeather(city) {
                 searchedCity.push(city.toUpperCase());
                 localStorage.setItem("city-name", JSON.stringify(searchedCity));
                 addToList(city);
+            } else {
+                if(find(city) > 0) {
+                    searchedCity.push(city.toUpperCase());
+                    localStorage.setItem("city-name", JSON.stringify(searchedCity));
+                    addToList(city);
+                }
             }
         }
     });
 }
 
-function UVIndex(ln,lt){
+function UVIndex(ln, lt){
     let uvURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey+"&lat="+lt+"&lon="+ln;
     $.ajax({
-            url:uvURL,
+            url: uvURL,
             method:"GET"
-            }).then(function(r){
+            }).then(function(r) {
                 $(currentUVindex).html(r.value);
             });
 }
 
 function forecast(thisCity) {
+    let dayover = false;
     let futureForecastURL = "https://api.openweathermap.org/data/2.5/forecast?id="+thisCity+"&appid="+APIKey;
     $.ajax({
         url: futureForecastURL,
         method: "GET"
     }).then(function(r) {
         for (i = 0; i < 5; i++) {
-            let date = new Date((r.list[((i+1) * 8) - 1].dt) * 1000).toLocaleDateString();
+            let date = new Date((r.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
             let iconCode = r.list[((i + 1) * 8) - 1].main.temp;
             let iconURL = "https://openweathermap.org/img/wn/"+iconCode+".png";
             let tempInK = r.list[((i + 1) * 8) - 1].main.temp;
@@ -92,3 +99,29 @@ function addToList(c) {
     $(listEl).attr("date-value", c.toUpperCase());
     $(".listed-city").append(listEl);
 }
+
+function searchPast(e) {
+    var liEl = e.target;
+    if (e.target.atches("li")) {
+        city = liEl.textContent;
+        currentWeather(city);
+    }
+}
+
+function loadCity() {
+    $("ul").empty();
+    var searchedCity = JSON.parse(localStorage.getItem("city-name"));
+    if (searchedCity !== null) {
+        searchedCity = JSON.parse(localStorage.getItem("city-name"));
+        for (i = 0; i < searchedCity.length; i++) {
+            addToList(searchedCity[i]);
+        }
+        city = searchedCity[i - 1];
+        currentWeather(city);
+    }
+}
+
+//Click Handlers
+$("#search-button").on("click",displayWeather);
+$(document).on("click", searchPast);
+$(window).on("load", loadCity);
