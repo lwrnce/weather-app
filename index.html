@@ -4,9 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Weather Dashboard</title>
 </head>
 <body>
-    
+    <div class="jumbotron container-fluid text-center">
+        <h2 class="page-title">
+            How's the Weather?
+        </h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <div class="city-input">
+                    <input type="text" class="form-control" placeholder="Enter a city name!">
+                    <button class="btn"><i class="fa fa-search"></i> Search</button>
+                    <!--List of Searched Cities-->
+                    <ul class="cities-list">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="current-weather">
+                        <h4 class="city-name">
+                            <p>Temperature:</p>
+                            <p>Humidity:</p>
+                            <p>Wind Speed:</p>
+                            <p>UV Index:</p>
+                        </h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="five-day-forecast">
+                        <h5>Weather for the Next Five Days</h5>
+                        <div class="row">
+                            <!--Future dates and images matching weather inserted via javascript-->
+                            <div class="col-2">
+                                <p id="date1"></p>
+                                <p id="weather-img1"></p>
+                                <p>Temperature:<span class="day1-temp"></span></p>
+                                <p>Humidity:<span class="day1-humidity"></span></p>
+                            </div>
+                            <div class="col-2">
+                                <p id="date2"></p>
+                                <p id="weather-img2"></p>
+                                <p>Temperature:<span class="day2-temp"></span></p>
+                                <p>Humidity:<span class="day2-humidity"></span></p>
+                            </div>
+                            <div class="col-2">
+                                <p id="date3"></p>
+                                <p id="weather-img3"></p>
+                                <p>Temperature:<span class="day3-temp"></span></p>
+                                <p>Humidity:<span class="day3-humidity"></span></p>
+                            </div>
+                            <div class="col-2">
+                                <p id="date4"></p>
+                                <p id="weather-img4"></p>
+                                <p>Temperature:<span class="day4-temp"></span></p>
+                                <p>Humidity:<span class="day4-humidity"></span></p>
+                            </div>
+                            <div class="col-2">
+                                <p id="date5"></p>
+                                <p id="weather-img5"></p>
+                                <p>Temperature:<span class="day5-temp"></span></p>
+                                <p>Humidity:<span class="day5-humidity"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/javascript/script.js"></script>
 </body>
 </html>
