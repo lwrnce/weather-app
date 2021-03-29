@@ -2,12 +2,13 @@
 
 * {
     box-sizing: border-box;
-    width: 100%;
 }
 
 header,
+body,
 section {
     overflow-x: hidden;
+    background-color: transparent;
 }
 
 :root {
@@ -17,25 +18,35 @@ section {
     --azur: linear-gradient(to right, #44d3c9, #3d70cf, #3636b9);
 }
 
+html {
+    background: url("/assets/images/japan-2014618.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
 .jumbotron {
+    background: black;
+    opacity: 0.6;
+}
+
+.search-title,
+.section-title,
+.page-title {
+    font-family: var(--Poiret-font);
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.search {
+    background: transparent;
+    background-color: var(--light-black);
+    height: 55vw;
+}
+
+.weather {
+    height: 10vw;
     background: var(--azur);
-}
-
-.btn {
-    outline: none;
-}
-
-.search .btn:hover {
-    background: var(--azur);
-}
-
-.clear-history .btn:hover {
-    background: red;
-}
-
-.card {
-    width: 12rem;
-    height: 18rem;
-    padding: 1em;
-    margin: 1em;
+    opacity: 0.6;
 }
