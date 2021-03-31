@@ -16,6 +16,7 @@ section {
     --light-black: #2e2c2caf;
     --light-gray: rgba(255, 255, 255, 0.877);
     --azur: linear-gradient(to right, #44d3c9, #3d70cf, #3636b9);
+    --smboxgradient: linear-gradient(45deg, #6096fd, #aab6fb, #fb7bbe, #faa7bb);
 }
 
 html {
@@ -46,7 +47,13 @@ html {
 }
 
 .weather {
-    height: 10vw;
     background: var(--azur);
-    opacity: 0.6;
+    opacity: 0.8;
 }
+
+.forecast {
+    background: var(--smboxgradient);
+    padding: 20px;
+    opacity: 0.8;
+}
+
