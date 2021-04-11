@@ -44,6 +44,7 @@ html {
     background: transparent;
     background-color: var(--light-black);
     height: 55vw;
+    padding: 20px;
 }
 
 .search .btn {
