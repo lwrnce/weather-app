@@ -16,11 +16,11 @@ section {
     --light-black: #2e2c2caf;
     --light-gray: rgba(255, 255, 255, 0.877);
     --azur: linear-gradient(to right, #44d3c9, #3d70cf, #3636b9);
-    --smboxgradient: linear-gradient(45deg, #6096fd, #aab6fb, #fb7bbe, #faa7bb);
+    --forecastgradient: linear-gradient(45deg, #6096fd, #aab6fb, #fb7bbe, #faa7bb);
 }
 
 html {
-    background: url("/assets/images/japan-2014618.jpg") no-repeat center center fixed;
+    background: url("../images/japan-2014618.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -46,14 +46,31 @@ html {
     height: 55vw;
 }
 
+.search .btn {
+    background: var(--light-gray);
+    outline: none;
+}
+
+.search .btn:hover {
+    background: #61d33e;
+}
+
+
 .weather {
     background: var(--azur);
     opacity: 0.8;
+    padding: 20px;
+}
+
+.carousel-item {
+    height: 300px;
 }
 
 .forecast {
-    background: var(--smboxgradient);
+    background: var(--forecastgradient);
     padding: 20px;
     opacity: 0.8;
 }
+
+
 
